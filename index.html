@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Mejorado</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <div class="form-container">
+    <h1>Suscripcion a beneficio de utiles 2025</h1>
+    <form id="registro-form">
+      <div class="form-group">
+        <input type="number" id="afiliado" name="afiliado" placeholder="AFILIADO NUMERO" required>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="nombre_apellido" name="nombre_apellido" placeholder="INGRESE NOMBRE Y APELLIDO" required>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="dni" name="dni" placeholder="INGRESE DNI" required>
+      </div>
+
+      <div class="form-group">
+        <input type="tel" id="telefono" name="telefono" placeholder="INGRESE TELÉFONO" required>
+      </div>
+
+      <div class="form-group">
+        <input type="text" id="nombre_hijo" name="nombre_hijo" placeholder="INGRESE NOMBRE DEL HIJO" required>
+      </div>
+
+      <div class="form-group">
+        <input type="number" id="edad" name="edad" placeholder="INGRESE EDAD" required>
+      </div>
+
+      <div class="form-group">
+        <select id="grado" name="grado" required>
+          <option value="" disabled selected>Seleccione un grado</option>
+          <!-- Primaria -->
+          <option value="1ro primaria">1ro Primaria</option>
+          <option value="2do primaria">2do Primaria</option>
+          <option value="3ro primaria">3ro Primaria</option>
+          <option value="4to primaria">4to Primaria</option>
+          <option value="5to primaria">5to Primaria</option>
+          <option value="6to primaria">6to Primaria</option>
+          <option value="7mo primaria">7mo Primaria</option>
+          <!-- Secundaria -->
+          <option value="1ro secundaria">1ro Secundaria</option>
+          <option value="2do secundaria">2do Secundaria</option>
+          <option value="3ro secundaria">3ro Secundaria</option>
+          <option value="4to secundaria">4to Secundaria</option>
+          <option value="5to secundaria">5to Secundaria</option>
+          <option value="6to secundaria">6to Secundaria</option>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <input type="number" id="talle" name="talle" placeholder="INGRESE TALLE" required>
+      </div>
+
+      <div class="form-group">
+        <textarea id="observaciones" name="observaciones" rows="4" placeholder="INGRESE OBSERVACIONES"></textarea>
+      </div>
+
+      <input type="hidden" id="empresa" name="empresa" value="Solbayres">
+
+      <button type="submit" id="submit-btn">ENVIAR</button>
+      <p id="response-message"></p>
+    </form>
+  </div>
+  <script>
+    // Ajusta el tipo de teclado automáticamente
+    document.querySelectorAll('input[type="text"], input[type="tel"], input[type="number"]').forEach(input => {
+      input.addEventListener('focus', () => {
+        const type = input.type;
+        if (type === 'tel' || type === 'number') {
+          input.setAttribute('inputmode', 'numeric');
+        } else {
+          input.setAttribute('inputmode', 'text');
+        }
+      });
+    });
+  </script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
